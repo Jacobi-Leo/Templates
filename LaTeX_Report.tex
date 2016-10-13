@@ -1,0 +1,109 @@
+\documentclass[hyperref,UTF8,titlepage]{ctexart}
+\usepackage[a4paper]{geometry}
+\usepackage{minted}
+\usemintedstyle{bw}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{subcaption}
+%\usepackage{eumeitem}
+\usepackage[]{graphicx}
+%\usepackage{pifont} % this is to provide macro \ding in line 12
+%
+%% \num{10e2}
+%% \mmHg
+%% \SI{4}{\milli\meter}
+%% \gg  % instead of $>\!\!>$
+%
+%
+%%% For footnote style
+%\usepackage[perpage]{footmisc}
+%\renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
+
+\pagestyle{fancy}
+%\geometry{a4paper, bottom=4cm}
+%\graphicspath{{}}
+\bibliographystyle{plain}
+
+\hypersetup{
+        colorlinks=false,
+        pdftitle={},
+        pdfauthor={Z. Y. Liu}}
+
+\newcommand{\me}{\mathrm{e}}
+\newcommand{\mi}{\mathrm{i}}
+\newcommand{\mRe}{\mathit{Re}}
+\newcommand{\mSt}{\mathit{St}}
+\newcommand{\mRo}{\mathit{Ro}}
+\newcommand{\Karman}{K\'arm\'an}
+\newcommand{\diff}{\,\mathrm{d}}
+
+\title{}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+%% BiBTeX settings
+%\bibliography{tex}
+\end{document}
+
+% %% How to add figures side by side?
+% \begin{figure}
+% \centering
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.4\linewidth]{image1}
+%   \caption{A subfigure}
+%   \label{fig:sub1}
+% \end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.4\linewidth]{image1}
+%   \caption{A subfigure}
+%   \label{fig:sub2}
+% \end{subfigure}
+% \caption{A figure with two subfigures}
+% \label{fig:test}
+% \end{figure}
+
+% \begin{figure}
+% \centering
+% \begin{minipage}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.4\linewidth]{image1}
+%   \captionof{figure}{A figure}
+%   \label{fig:test1}
+% \end{minipage}%
+% \begin{minipage}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.4\linewidth]{image1}
+%   \captionof{figure}{Another figure}
+%   \label{fig:test2}
+% \end{minipage}
+% \end{figure}
+
+% %% The simple manual for minted package
+% \begin{minted}
+%   [
+%     frame=lines,
+%     framesep=2mm,
+%     baselinestretch=1.2,
+%     bgcolor=LightGray,
+%     fontsize=\footnotesize,
+%     linenos
+%   ]
+%   {python}
+%   % some Python code
+% \end{minted}
+
+% \inputminted[firstline=2, lastline=12]{octave}{BitXorMatrix.m}
+
+% \mint{html}|<h2>Something <b>here</b></h2>|
+
+% %% End %% Actually there are many fabulous features...
