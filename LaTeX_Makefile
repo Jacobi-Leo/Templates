@@ -1,5 +1,5 @@
 # Makefile for LaTeX
-PDFC = xelatex
+PDFC = xelatex -shell-escape
 BIBC = bibtex
 READER = mupdf
  
