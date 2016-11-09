@@ -2,6 +2,7 @@
 \usepackage{hyperref}
 \usepackage[a4paper]{geometry}
 \usepackage{minted}
+\usepackage{python}
 \usemintedstyle{bw}
 \usepackage{amsmath}
 \usepackage{bm}
@@ -25,12 +26,12 @@
 %\renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
 
 \pagestyle{plain}
-\usemintedstyle{borland}
+\usemintedstyle{vim}
 %\geometry{a4paper, bottom=4cm}
 %\graphicspath{{}}
 \bibliographystyle{plain}
 
-\hypersetup{
+\hypersetup{%
         colorlinks=false,
         pdftitle={},
         pdfauthor={Z. Y. Liu}}
@@ -41,7 +42,8 @@
 \newcommand{\mSt}{\mathit{St}}
 \newcommand{\mRo}{\mathit{Ro}}
 \newcommand{\Karman}{K\'arm\'an}
-\newcommand{\diff}{\,\mathrm{d}}
+%\newcommand{\diff}{\,\mathrm{d}}
+\DeclareMathOperator\dif{d\!}
 
 \title{}
 \author{}
@@ -55,57 +57,59 @@
 %\bibliography{tex}
 \end{document}
 
-% %% How to add figures side by side?
-% \begin{figure}
-% \centering
-% \begin{subfigure}{.5\textwidth}
-%   \centering
-%   \includegraphics[width=.4\linewidth]{image1}
-%   \caption{A subfigure}
-%   \label{fig:sub1}
-% \end{subfigure}%
-% \begin{subfigure}{.5\textwidth}
-%   \centering
-%   \includegraphics[width=.4\linewidth]{image1}
-%   \caption{A subfigure}
-%   \label{fig:sub2}
-% \end{subfigure}
-% \caption{A figure with two subfigures}
-% \label{fig:test}
-% \end{figure}
+\if\false%
+%% How to add figures side by side?
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{image1}
+  \caption{A subfigure}
+\label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{image1}
+  \caption{A subfigure}
+\label{fig:sub2}
+\end{subfigure}
+\caption{A figure with two subfigures}
+\label{fig:test}
+\end{figure}
 
-% \begin{figure}
-% \centering
-% \begin{minipage}{.5\textwidth}
-%   \centering
-%   \includegraphics[width=.4\linewidth]{image1}
-%   \captionof{figure}{A figure}
-%   \label{fig:test1}
-% \end{minipage}%
-% \begin{minipage}{.5\textwidth}
-%   \centering
-%   \includegraphics[width=.4\linewidth]{image1}
-%   \captionof{figure}{Another figure}
-%   \label{fig:test2}
-% \end{minipage}
-% \end{figure}
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{image1}
+  \captionof{figure}{A figure}
+\label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{image1}
+  \captionof{figure}{Another figure}
+\label{fig:test2}
+\end{minipage}
+\end{figure}
 
-% %% The simple manual for minted package
-% \begin{minted}
-%   [
-%     frame=lines,
-%     framesep=2mm,
-%     baselinestretch=1.2,
-%     bgcolor=LightGray,
-%     fontsize=\footnotesize,
-%     linenos
-%   ]
-%   {python}
-%   % some Python code
-% \end{minted}
+%% The simple manual for minted package
+\begin{minted}
+  [
+    frame=lines,
+    framesep=2mm,
+    baselinestretch=1.2,
+    bgcolor=LightGray,
+    fontsize=\footnotesize,
+    linenos
+  ]
+  {python}
+  % some Python code
+\end{minted}
 
-% \inputminted[firstline=2, lastline=12]{octave}{BitXorMatrix.m}
+\inputminted[firstline=2, lastline=12]{octave}{BitXorMatrix.m}
 
-% \mint{html}|<h2>Something <b>here</b></h2>|
+\mint{html}|<h2>Something <b>here</b></h2>|
 
-% %% End %% Actually there are many fabulous features...
+%% End %% Actually there are many fabulous features...
+\fi

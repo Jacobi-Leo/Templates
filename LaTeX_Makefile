@@ -3,12 +3,12 @@ PDFC = xelatex -shell-escape
 BIBC = bibtex
 READER = mupdf
  
-TARGET = report.pdf
+TARGET = main.pdf
 OUTGROWTH = *.out *.log *.aux *.toc *.lof *.lot *.lol *.bbl *.blg
 #OUTGROWTH = *.out *.log *.aux
-SOURCE = report.tex
+SOURCE = main.tex
 SOURCES = *.tex
-BSOURCE = report
+BSOURCE = main
   
 STRIP = detex
 COUNTER = wc

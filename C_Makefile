@@ -20,11 +20,13 @@ OBJ = \
 %.o : %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-$(TARGET) : $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
+$(TARGET) : $(OBJ) $(DEPS)
+	$(CC) -o $@ $< $(CFLAGS) $(LDFLAGS)
 
 run: $(TARGET)
 	./$(TARGET)
+
+.PHONEY: clean cleanall
 
 clean:
 	rm -f *.o
@@ -32,3 +34,9 @@ clean:
 cleanall:
 	clean
 	rm -f $(TARGET)
+
+#* Some explaination
+
+#** $@ is the left side of symbol ``:''
+#** $^ is the right side of symbol ``:''
+#** $< is the first item is dependency list
