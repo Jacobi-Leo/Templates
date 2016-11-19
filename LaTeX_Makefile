@@ -25,10 +25,10 @@ $(TARGET): $(SOURCE)
 #$(TARGET): $(SOURCES)
 #	$(PDFC)    $(SOURCE)  && $(PDFC)    $(SOURCE)
 
-read: report.pdf
+read: $(TARGET)
 	$(READER) $(TARGET)
 
-count: report.tex
+count: $(SOURCES)
 	$(STRIP)  $(SOURCES) | uniq | $(COUNTER) -m
 
 clean:
