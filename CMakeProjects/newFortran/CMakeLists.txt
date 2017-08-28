@@ -3,6 +3,15 @@ cmake_minimum_required(VERSION 3.5)
 project(matrix)
 enable_language(Fortran)
 
+set (CMAKE_BUILD_TYPE DEBUG)
+
+# make sure that the default is a RELEASE
+if (NOT CMAKE_BUILD_TYPE)
+  set (CMAKE_BUILD_TYPE RELEASE CACHE STRING
+      "Choose the type of build, options are: None Debug Release."
+      FORCE)
+endif (NOT CMAKE_BUILD_TYPE)
+
 set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -llapack")
 set(CMAKE_Fortran_COMPILER_ID "GNU")
 
@@ -32,15 +41,16 @@ if(CMAKE_Fortran_COMPILER_ID MATCHES "PGI")
   set(CMAKE_CXX_COMPILER "pgc++")
   set(dialect "-Mfreeform -Mdclchk -Mstandard -Mallocatable=03")
   set(bounds "-C")
+  set(warning "")
   set(precision "-r8")
   set(performance "-fast -Mipa=fast,inline")
 endif()
 
-set(CMAKE_Fortran_FLAGS_DEBUG "${CMAKE_Fortran_FLAGS_DEBUG} ${dialect} ${bounds} ${precision}")
+set(CMAKE_Fortran_FLAGS_DEBUG "${CMAKE_Fortran_FLAGS_DEBUG} ${dialect} ${precision} ${bounds} ${warning}")
 set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} ${dialect} ${precision} ${performance}")
 
 #
 # Compile.
 #
-file(GLOB_RECURSE sources  src/test.f90 src/denseMatrix.f90 src/constant.f90 src/*.h)
+file(GLOB_RECURSE sources  src/*.f90 src/*.h)
 add_executable(prog ${sources})
